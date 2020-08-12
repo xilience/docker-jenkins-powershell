@@ -1,9 +1,11 @@
-# Jenkins + PowerShell Dockerfile
+# Jenkins + PowerShell  + .NET Core Dockerfile
 
 To make it easy to start PowerShell scripting in Jenkins Pipeline.
 
+Based on matt9ucci's Jenkin's + PowerShell docker image, which itself is based on:
 Based on [Jenkins official image](https://hub.docker.com/r/jenkins/jenkins/).
 Installed [PowerShell](https://github.com/PowerShell/PowerShell) from Microsoft’s repository.
+Installed .NET Core
 
 ## Background
 
