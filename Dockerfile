@@ -1,4 +1,4 @@
-ARG jenkins_tag=lts
+ARG jenkins_tag=latest
 FROM jenkins/jenkins:${jenkins_tag}
 
 # To run apt
