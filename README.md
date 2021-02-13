@@ -17,27 +17,27 @@ However, Jenkins official image does not contain PowerShell.
 ### Build
 LTS
 ```
-docker build --tag jenkins-powershell:lts .
+docker build --tag docker-jenkins-powershell-netcore:lts .
 ```
 Specific Version
 ```
-docker build --tag jenkins-powershell:2.73.2 --build-arg jenkins_tag=2.73.2 .
+docker build --tag docker-jenkins-powershell-netcore:2.73.2 --build-arg jenkins_tag=2.73.2 .
 ```
 
 ### Run
 LTS, ephemeral
 ```
-docker run -d -p 8080:8080 -p 50000:50000 --rm matt9ucci/jenkins-powershell:lts
+docker run -d -p 8080:8080 -p 50000:50000 --rm xilience/docker-jenkins-powershell-netcore:lts
 ```
 
 LTS with volume
 ```
-docker run -d -p 8080:8080 -p 50000:50000 --name jenkins-ps -v jenkins_home:/var/jenkins_home matt9ucci/jenkins-powershell:lts
+docker run -d -p 8080:8080 -p 50000:50000 --name jenkins-ps -v jenkins_home:/var/jenkins_home xilience/docker-jenkins-powershell-netcore:lts
 ```
 
 Jenkins version
 ```
-docker run --rm matt9ucci/jenkins-powershell:lts --version
+docker run --rm xilience/docker-jenkins-powershell-netcore:lts --version
 ```
 
 ### Take advantage of the features of base imagae
@@ -46,7 +46,7 @@ All the features available in the Jenkins official image is also available in th
 
 The following example runs an LTS ephemeral container passing `JAVA_OPTS` for skipping the initial setup wizard:
 ```
-docker run -d -p 8080:8080 -p 50000:50000 --rm --env JAVA_OPTS=-Djenkins.install.runSetupWizard=false matt9ucci/jenkins-powershell:lts
+docker run -d -p 8080:8080 -p 50000:50000 --rm --env JAVA_OPTS=-Djenkins.install.runSetupWizard=false xilience/docker-jenkins-powershell-netcore:lts
 ```
 
 For more information, see the following documents:
