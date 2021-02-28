@@ -6,7 +6,7 @@ USER root
 
 # Install required packages
 RUN apt-get update \
- && apt-get install -y apt-transport-https \
+ && apt-get install -y apt-transport-https mkisofs \
  && rm -rf /var/lib/apt/lists/*
 
 # Install PowerShell from Microsoft’s repository
