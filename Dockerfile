@@ -6,7 +6,7 @@ USER root
 
 # Install required packages
 RUN apt-get update \
- && apt-get install -y apt-transport-https genisoimage \
+ && apt-get install -y curl gnupg apt-transport-https genisoimage \
  && rm -rf /var/lib/apt/lists/*
 
 # Install PowerShell from Microsoft’s repository
