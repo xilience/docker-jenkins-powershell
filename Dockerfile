@@ -18,7 +18,7 @@ RUN curl https://packages.microsoft.com/keys/microsoft.asc | apt-key add - \
  #&& dpkg -i packages-microsoft-prod.deb \
  && sh -c 'echo "deb [arch=amd64] https://packages.microsoft.com/repos/microsoft-debian-stretch-prod stretch main" > /etc/apt/sources.list.d/microsoft.list' \
  && apt-get update \
- && apt-get install -y powershell aspnetcore-runtime-3.1 \
+ && apt-get install -y libicu57 powershell aspnetcore-runtime-3.1 \
  && rm -rf /var/lib/apt/lists/*
 
 # Drop back to the jenkins user
