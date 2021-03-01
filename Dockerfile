@@ -20,11 +20,11 @@ RUN curl https://packages.microsoft.com/keys/microsoft.asc | apt-key add - \
  #&& sh -c 'echo "deb [arch=amd64] https://packages.microsoft.com/repos/microsoft-debian-stretch-prod stretch main" > /etc/apt/sources.list.d/microsoft.list' \
  #&& apt-get update \
  #&& apt-get install -y aspnetcore-runtime-3.1 \
- && https://packages.microsoft.com/config/debian/10/packages-microsoft-prod.deb
+ && https://packages.microsoft.com/config/debian/10/packages-microsoft-prod.deb \
  # Register the Microsoft repository GPG keys
- && dpkg -i packages-microsoft-prod.deb
- && apt-get update
- && apt-get install -y powershell aspnetcore-runtime-3.1
+ && dpkg -i packages-microsoft-prod.deb \
+ && apt-get update \
+ && apt-get install -y powershell aspnetcore-runtime-3.1 \
 
  && rm -rf /var/lib/apt/lists/*
 
