@@ -6,7 +6,7 @@ USER root
 
 # Install required packages
 RUN apt-get update \
- && apt-get install -y curl gnupg apt-transport-https genisoimage xorriso \
+ && apt-get install -y curl gnupg apt-transport-https genisoimage \
  && rm -rf /var/lib/apt/lists/*
 
 # Install PowerShell from Microsoft’s repository
@@ -24,7 +24,8 @@ RUN curl https://packages.microsoft.com/keys/microsoft.asc | apt-key add - \
  # Register the Microsoft repository GPG keys
  && dpkg -i packages-microsoft-prod.deb \
  && apt-get update \
- && apt-get install -y powershell aspnetcore-runtime-3.1 \
+ #&& apt-get install -y powershell aspnetcore-runtime-3.1 \
+ && apt-get install -y powershell \
 
  && rm -rf /var/lib/apt/lists/*
 
